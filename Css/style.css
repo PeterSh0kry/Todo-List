@@ -1,0 +1,125 @@
+:root {
+  --primary-color: #84ed6f;
+  --secondary-color: #008cba;
+  --text-color: #333;
+  --done-color: #0bb820;
+  --remove-color: #ff5656;
+  --edit-color: #4593ff;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--primary-color);
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+.project-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.todo-container {
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#todo-input {
+  flex: 1;
+  border-radius: 7px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+#todo-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 7px;
+  margin-left: 0.5rem;
+  color: #fff;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+}
+
+/* #todo-btn:hover {
+  background-color: darken(var(--secondary-color), 10%);
+} */
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.done .todo-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.fa-remove, .fa-check, .fa-pencil-square-o {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.fa-remove:hover, .fa-check:hover, .fa-pencil-square-o:hover {
+  transform: scale(1.2);
+}
+
+.fa-remove { color: var(--remove-color); }
+.fa-check { color: var(--done-color); }
+.fa-pencil-square-o { color: var(--edit-color); }
+
+.edit {
+  background-color: var(--done-color);
+}
+
+@media (max-width: 480px) {
+  .todo-form {
+    flex-direction: column;
+  }
+
+  #todo-input, #todo-btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  #todo-btn {
+    margin-left: 0;
+  }
+
+  .todo-item {
+    flex-wrap: wrap;
+  }
+
+  .todo-text {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
